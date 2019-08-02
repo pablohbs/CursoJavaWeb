@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+	<title>Curso Java Web</title>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link href="assets/css/bootstrap-responsive.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+	
+	<h:outputStylesheet library="css" name="estilos.css" />
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+	
+	 <h:outputScript library="js" name="mascara.js" />
+    <h:outputScript library="js" name="locales.js" />
+
+</h:head>
+<h:body>
+
+	<p:growl id="feedBackUsuario" />
+
+	<h:form id="FormTabelaDados">
+		<p:panel header="Cadastro de Pessoas">
+			<p:toolbar id="sticky" style="background: #FFFFFF !important; color: #000000 !important; font-size: 12px !important;">
+				
+				<f:facet name="left">
+					<p:commandButton value="Novo" icon="fa fa-plus" oncomplete="PF('dlgPessoa').show(); PF('dlgPessoa').initPosition();" actionListener="#{pessoaController.novaPessoa}" 
+					update=":FormCadastro" styleClass="btn-primary" />
+				</f:facet>
+				
+				<f:facet name="right">
+					
+					<p:outputLabel value="Pesquisar Por Situação: " styleClass="textoNegrito" />
+					<p:selectOneMenu value="#{pessoaController.enumSituacao}" >
+						<f:selectItem noSelectionOption="true" itemLabel="Selecione uma Situação" />
+						<f:selectItems value="#{pessoaController.listaEnumSituacao}" var="situacao" itemValue="#{situacao}" itemLabel="#{situacao.descricao}" />
+					</p:selectOneMenu>
+							
+					<span class="ui-separator" />
+								
+					<p:commandButton icon="fa fa-search" value="Pesquisar" actionListener="#{pessoaController.pesquisar}" update="FormTabelaDados" styleClass="btn-success" />
+				</f:facet>
+			</p:toolbar>
+			<p:sticky target="sticky" />
+			<p />
+		
+			<p:dataTable value="#{pessoaController.listaPessoa}" var="pessoa" paginator="true" paginatorPosition="bottom" reflow="true"	emptyMessage="nenhuma pessoa cadastrada">
+
+				<p:column headerText="ID" width="10%" style="text-align: center;">
+					<h:outputLabel value="#{pessoa.id}" />
+				</p:column>
+				
+				<p:column headerText="Nome" width="40%" style="text-align: center;">
+					<h:outputLabel value="#{pessoa.nome}" />
+				</p:column>
+				
+				<p:column headerText="CPF/CNPJ" width="20%" style="text-align: center;">
+					<h:outputLabel value="#{pessoa.cpfCnpj}" />
+				</p:column>
+				
+				<p:column headerText="Situacao" width="15%" style="text-align: center;">
+					<h:outputText value="#{pessoa.situacao}" rendered="#{pessoa.situacao == 'ATIVO'}" styleClass="badge badge-success" />
+					<h:outputText value="#{pessoa.situacao}" rendered="#{pessoa.situacao == 'INATIVO'}"	styleClass="badge badge-danger" />
+				</p:column>
+
+				<p:column headerText="Opções" width="15%" style="text-align: center;">
+				
+					<p:commandButton id="imprimir" actionListener="#{pessoaController.gerar}" icon="ui-icon-print" title="Texto" ajax="false" onclick="this.form.target='_blank'">							
+						<f:attribute name="pessoaSelecionada" value="#{pessoa}" />						
+					</p:commandButton>
+					<p:tooltip for="imprimir" value="Imprimir" position="top"/>
+
+					<p:commandButton id="editar" icon="fa fa-pencil" oncomplete="PF('dlgPessoa').show(); PF('dlgPessoa').initPosition();" actionListener="#{pessoaController.editarPessoa}" 
+					update=":feedBackUsuario :FormCadastro" styleClass="btn-warning">
+						<f:attribute name="pessoaSelecionada" value="#{pessoa}" />
+					</p:commandButton>
+					<p:tooltip for="editar" value="Editar" position="top"/>
+
+					<p:commandButton id="remover" icon="fa fa-remove" actionListener="#{pessoaController.excluirPessoa}" update=":feedBackUsuario :FormTabelaDados" 
+					styleClass="btn-danger">
+						<p:confirm header="Confirmar" message="Deseja Excluir a Pessoa #{pessoa.nome}?"	icon="ui-icon-alert" />
+						<f:attribute name="pessoaSelecionada" value="#{pessoa}" />
+					</p:commandButton>
+					<p:tooltip for="remover" value="Remover" position="top"/>
+				</p:column>
+
+			</p:dataTable>
+			<p:confirmDialog global="true" responsive="true">
+				<p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+				<p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+			</p:confirmDialog>
+			<br></br>
+		</p:panel>
+	</h:form>
+
+
+	<p:dialog header="Cadastro de Pessoas" widgetVar="dlgPessoa" modal="true" resizable="false" styleClass="DialogoPequenoSilpmes" responsive="true">
+		<h:form id="FormCadastro">
+			<p:panelGrid columns="1" layout="grid" columnClasses="ui-grid-col-12" styleClass="ui-fluid ui-panelgrid-blank">
+
+				<h:panelGroup>
+					<p:outputLabel value="Nome: " styleClass="textoNegrito" />
+					<p:inputText value="#{pessoaController.pessoa.nome}" required="true" requiredMessage="O Campo Nome é Obrigatório!" />
+				</h:panelGroup>
+
+			</p:panelGrid>
+			<p:panelGrid columns="2" layout="grid" columnClasses="ui-grid-col-6" styleClass="ui-fluid ui-panelgrid-blank">
+			
+				<h:panelGroup>
+					<p:outputLabel value="CPF/CNPJ: " styleClass="textoNegrito" />
+					<p:inputText value="#{pessoaController.pessoa.cpfCnpj}" maxlength="18" onkeypress="mascara(this, cpfCnpj);" required="true" requiredMessage="O Campo CPF/CNPJ é Obrigatório!" />
+				</h:panelGroup>
+				
+				<h:panelGroup>
+					<p:outputLabel value="Situação: " styleClass="textoNegrito" />
+					<p:selectOneMenu value="#{pessoaController.pessoa.situacao}" required="true" requiredMessage="O Campo Situação é Obrigatório!" >
+						<f:selectItem noSelectionOption="true" itemLabel="Selecione uma Situação" />
+						<f:selectItems value="#{pessoaController.listaEnumSituacao}" var="situacao" itemValue="#{situacao}" itemLabel="#{situacao.descricao}" />
+					</p:selectOneMenu>
+				</h:panelGroup>
+			
+			</p:panelGrid>
+
+			<p />
+			<p:panelGrid columns="1" columnClasses="ui-grid-col-12"	styleClass="ui-panelgrid-blank">
+				
+				<p:commandButton value="Novo Contato" icon="fa fa-plus" oncomplete="PF('dlgContato').show();" actionListener="#{pessoaController.novoContato}" 
+				update=":FormContato" immediate="true" styleClass="btn-primary"/>
+
+				<p:dataTable id="tabelaContato"	value="#{pessoaController.listaContato}" var="contato" style="text-align:center;">
+					
+					<p:column headerText="Descrição Contato" width="80%" >
+						<p:outputLabel value="#{contato.descricao}" />
+					</p:column>
+
+					<p:column headerText="Remover" width="20%">
+						<p:commandButton icon="fa fa-remove" actionListener="#{pessoaController.excluirContato}" update=":feedBackUsuario :FormCadastro:tabelaContato" styleClass="btn-danger">
+							<p:confirm header="Confirmar" message="Deseja Excluir o Contato #{contato.descricao}?" icon="ui-icon-alert"  />
+							<f:attribute name="contatoSelecionado" value="#{contato}" />
+						</p:commandButton>
+					</p:column>
+
+				</p:dataTable>
+
+				<p />
+				<p:commandButton value="Gravar" icon="fa fa-check" actionListener="#{pessoaController.salvarPessoa}" update=":feedBackUsuario FormCadastro :FormTabelaDados" 
+				styleClass="btn-success" />
+			</p:panelGrid>
+		</h:form>
+	</p:dialog>
+
+
+	<p:dialog header="Cadastro de Contato" widgetVar="dlgContato" modal="true" resizable="false" styleClass="DialogoPequenoSilpmes" responsive="true">
+		<h:form id="FormContato">
+			<p:panelGrid columns="1" layout="grid" columnClasses="ui-grid-col-12" styleClass="ui-fluid ui-panelgrid-blank">
+
+				<h:panelGroup>
+					<p:outputLabel value="Celular: " styleClass="textoNegrito" />
+					<p:inputMask mask="(99) 9.9999-9999" value="#{pessoaController.contato.descricao}" />
+				</h:panelGroup>
+				
+			</p:panelGrid>
+			<p />
+			<p:panelGrid columns="1" layout="grid" columnClasses="ui-grid-col-12" styleClass="ui-panelgrid-blank">	
+
+				<p:commandButton value="Adicionar" oncomplete="PF('dlgContato').hide();" actionListener="#{pessoaController.salvarContato}"	
+				update=":feedBackUsuario :FormCadastro:tabelaContato" />
+			</p:panelGrid>
+
+		</h:form>
+	</p:dialog>
+
+</h:body>
+</html>

@@ -1,0 +1,518 @@
+@CHARSET "UTF-8";
+
+.ui-widget, .ui-widget, .ui-widget {
+	font-size: 80%;
+}
+
+.textoNegrito {
+	font-weight: bold !important;
+}
+
+@media screen and (max-width: 320px) {
+	.mobile {
+		width: 95% !important;
+		height: 95% !important;
+	}
+	.DialogoPequenoSilpmes {
+		width: 90% !important;
+	}
+	.DialogoPequeno {
+		width: 95% !important;
+		height: 95% !important;
+	}
+	.dialogoParecer {
+		width: 95% !important;
+		height: 95% !important;
+	}
+	.telaMedia {
+		width: 95% !important;
+		height: 90% !important;
+	}
+	.telaTamanhoMedio {
+		width: 95% !important;
+		height: 95% !important;
+	}
+	.dialogoSemAltura {
+		width: 95% !important;
+		height: 95% !important;
+	}
+	.telaGrande {
+		width: 95% !important;
+		height: 95% !important;
+	}
+	.dialogoGrandeSemAltura {
+		width: 90% !important;
+		height: 90% !important;
+	}
+	.telaCadastroMedio {
+		width: 95% !important;
+		height: 95% !important;
+	}
+}
+
+@media screen and (min-width: 320px) and (max-width: 375px) {
+	.mobile {
+		width: 95% !important;
+		height: 95% !important;
+	}
+	.DialogoPequenoSilpmes {
+		width: 90% !important;
+	}
+	.DialogoPequeno {
+		width: 95% !important;
+		height: 95% !important;
+	}
+	.dialogoParecer {
+		width: 95% !important;
+		height: 95% !important;
+	}
+	.telaMedia {
+		width: 95% !important;
+		height: 90% !important;
+	}
+	.telaTamanhoMedio {
+		width: 95% !important;
+		height: 90% !important;
+	}
+	.dialogoSemAltura {
+		width: 95% !important;
+		height: 95% !important;
+	}
+	.telaGrande {
+		width: 95% !important;
+		height: 95% !important;
+	}
+	.dialogoGrandeSemAltura {
+		width: 90% !important;
+		height: 90% !important;
+	}
+	.telaCadastroMedio {
+		width: 95% !important;
+		height: 95% !important;
+	}
+}
+
+@media screen and (min-width: 375px) and (max-width: 414px) {
+	.mobile {
+		width: 95% !important;
+		height: 95% !important;
+	}
+	.DialogoPequenoSilpmes {
+		width: 70% !important;
+	}
+	.DialogoPequeno {
+		width: 95% !important;
+		height: 95% !important;
+	}
+	.dialogoParecer {
+		width: 95% !important;
+		height: 95% !important;
+	}
+	.telaMedia {
+		width: 95% !important;
+		height: 90% !important;
+	}
+	.telaTamanhoMedio {
+		width: 95% !important;
+		height: 95% !important;
+	}
+	.dialogoSemAltura {
+		width: 95% !important;
+		height: 95% !important;
+	}
+	.telaGrande {
+		width: 95% !important;
+		height: 95% !important;
+	}
+	.dialogoGrandeSemAltura {
+		width: 90% !important;
+		height: 90% !important;
+	}
+	.telaCadastroMedio {
+		width: 95% !important;
+		height: 95% !important;
+	}
+}
+
+@media screen and (min-width: 414px) and (max-width: 768px) {
+	.mobile {
+		width: 95% !important;
+		height: 95% !important;
+	}
+	.DialogoPequenoSilpmes {
+		width: 50% !important;
+	}
+	.DialogoPequeno {
+		width: 95% !important;
+		height: 95% !important;
+	}
+	.dialogoParecer {
+		width: 95% !important;
+	}
+	.telaMedia {
+		width: 95% !important;
+		height: 90% !important;
+	}
+	.telaTamanhoMedio {
+		width: 95% !important;
+		height: 95% !important;
+	}
+	.dialogoSemAltura {
+		width: 95% !important;
+		height: 95% !important;
+	}
+	.telaGrande {
+		width: 95% !important;
+		height: 95% !important;
+	}
+	.dialogoGrandeSemAltura {
+		width: 90% !important;
+		height: 90% !important;
+	}
+	.telaCadastroMedio {
+		width: 95% !important;
+		height: 95% !important;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 800px) {
+	.mobile {
+		width: 95% !important;
+		height: 95% !important;
+	}
+	.DialogoPequenoSilpmes {
+		width: 50% !important;
+	}
+	.DialogoPequeno {
+		width: 80% !important;
+		height: 95% !important;
+	}
+	.dialogoParecer {
+		width: 85% !important;
+		height: 95% !important;
+	}
+	.telaMedia {
+		width: 95% !important;
+		height: 95% !important;
+	}
+	.telaTamanhoMedio {
+		width: 95% !important;
+		height: 95% !important;
+	}
+	.dialogoSemAltura {
+		width: 85% !important;
+	}
+	.telaGrande {
+		width: 90% !important;
+		height: 95% !important;
+	}
+	.dialogoGrandeSemAltura {
+		width: 90% !important;
+	}
+	.telaCadastroMedio {
+		width: 90% !important;
+		height: 90% !important;
+	}
+}
+
+@media screen and (min-width: 800px) and (max-width: 1024px) {
+	.mobile {
+		width: 80% !important;
+		height: 95% !important;
+	}
+	.DialogoPequenoSilpmes {
+		width: 45% !important;
+	}
+	.DialogoPequeno {
+		width: 70% !important;
+		height: 95% !important;
+	}
+	.dialogoParecer {
+		width: 80% !important;
+		height: 90% !important;
+	}
+	.telaMedia {
+		width: 95% !important;
+		height: 95% !important;
+		overflow: auto !important;
+	}
+	.telaTamanhoMedio {
+		width: 90% !important;
+		height: 95% !important;
+	}
+	.dialogoSemAltura {
+		width: 85% !important;
+	}
+	.telaGrande {
+		width: 90% !important;
+		height: 95% !important;
+	}
+	.dialogoGrandeSemAltura {
+		width: 90% !important;
+	}
+	.telaCadastroMedio {
+		width: 80% !important;
+		height: 80% !important;
+	}
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+	.mobile {
+		width: 80% !important;
+		height: 95% !important;
+	}
+	.DialogoPequenoSilpmes {
+		width: 40% !important;
+	}
+	.DialogoPequeno {
+		width: 60% !important;
+		height: 95% !important;
+	}
+	.dialogoParecer {
+		width: 80% !important;
+		height: 90% !important;
+	}
+	.telaMedia {
+		width: 90% !important;
+		height: 95% !important;
+		overflow: auto !important;
+	}
+	.telaTamanhoMedio {
+		width: 80% !important;
+		height: 95% !important;
+	}
+	.dialogoSemAltura {
+		width: 70% !important;
+	}
+	.telaGrande {
+		width: 90% !important;
+		height: 95% !important;
+	}
+	.dialogoGrandeSemAltura {
+		width: 80% !important;
+	}
+	.telaCadastroMedio {
+		width: 80% !important;
+		height: 80% !important;
+	}
+}
+
+.div-menuNovo {
+	width: 98% !important;
+	height: 65% !important;
+	overflow: auto !important;
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1366px) {
+	.mobile {
+		width: 90% !important;
+		height: 95% !important;
+	}
+	.DialogoPequenoSilpmes {
+		width: 40% !important;
+	}
+	.DialogoPequeno {
+		width: 60% !important;
+		height: 95% !important;
+	}
+	.dialogoParecer {
+		width: 85% !important;
+		height: 85% !important;
+	}
+	.telaMedia {
+		width: 85% !important;
+		height: 95% !important;
+		overflow: auto !important;
+	}
+	.telaTamanhoMedio {
+		width: 80% !important;
+		height: 95% !important;
+	}
+	.dialogoSemAltura {
+		width: 60% !important;
+	}
+	.telaGrande {
+		width: 90% !important;
+		height: 95% !important;
+	}
+	.dialogoGrandeSemAltura {
+		width: 60% !important;
+	}
+	.dialogoGrandeSemAltura {
+		width: 80% !important;
+	}
+	.telaCadastroMedio {
+		width: 80% !important;
+		height: 80% !important;
+	}
+}
+
+/* RESOLUÇÃO ATUAL DO MEU NOTBOOK */
+@media screen and (min-width: 1366px) and (max-width: 1600px) {
+	.mobile {
+		width: 80% !important;
+		height: 80% !important;
+	}
+	.DialogoPequenoSilpmes {
+		width: 30% !important;
+	}
+	.DialogoPequeno {
+		width: 40% !important;
+	}
+	.dialogoParecer {
+		width: 60% !important;
+		height: 85% !important;
+	}
+	.telaMedia {
+		width: 80% !important;
+		height: 95% !important;
+		overflow: auto !important;
+	}
+	.telaTamanhoMedio {
+		width: 80% !important;
+		height: 95% !important;
+	}
+	.dialogoSemAltura {
+		width: 50% !important;
+	}
+	.telaGrande {
+		width: 90% !important;
+		height: 95% !important;
+	}
+	.dialogoGrandeSemAltura {
+		width: 80% !important;
+	}
+	.telaCadastroMedio {
+		width: 80% !important;
+		height: 80% !important;
+	}
+}
+
+@media screen and (min-width: 1596px) and (max-width: 1900px) {
+	.mobile {
+		width: 70% !important;
+		height: 70% !important;
+	}
+	.DialogoPequenoSilpmes {
+		width: 30% !important;
+	}
+	.DialogoPequeno {
+		width: 40% !important;
+	}
+	.dialogoParecer {
+		width: 60% !important;
+		height: 75% !important;
+	}
+	.telaMedia {
+		width: 70% !important;
+		height: 95% !important;
+		overflow: auto !important;
+	}
+	.dialogoSemAltura {
+		width: 60% !important;
+	}
+	.telaGrande {
+		width: 70% !important;
+		height: 95% !important;
+	}
+	.dialogoGrandeSemAltura {
+		width: 60% !important;
+	}
+	.telaCadastroMedio {
+		width: 50% !important;
+		height: 85% !important;
+	}
+}
+
+@media screen and (min-width: 1900px) and (max-width: 2000px) {
+	.mobile {
+		width: 70% !important;
+		height: 70% !important;
+	}
+	.DialogoPequenoSilpmes {
+		width: 30% !important;
+	}
+	.DialogoPequeno {
+		width: 40% !important;
+	}
+	.dialogoParecer {
+		width: 60% !important;
+	}
+	.telaMedia {
+		width: 65% !important;
+		height: 95% !important;
+		overflow: auto !important;
+	}
+	.dialogoSemAltura {
+		width: 50% !important;
+	}
+	.telaGrande {
+		width: 70% !important;
+		height: 95% !important;
+	}
+	.dialogoGrandeSemAltura {
+		width: 60% !important;
+	}
+	.telaCadastroMedio {
+		width: 50% !important;
+		height: 80% !important;
+	}
+}
+
+.ui-icon.ui-ribbonicon-new {
+	height: 32px !important;
+	left: 50% !important;
+	margin-top: -31px !important;
+	width: 32px !important;
+	background-image: url(../resources/images/icon/potm.png);
+}
+
+
+/* BOTÕES */
+.btn-primary {
+	color: #fff !important;
+	background: linear-gradient(to bottom, #337ab7 0%, #265a88 100%) !important;
+	border-color: #2e6da4 !important;
+}
+
+.btn-primary:hover {
+	color: #fff !important;
+	background: #286090 !important;
+	border-color: #204d74 !important;
+}
+
+.btn-danger {
+	color: #fff !important;
+	background: linear-gradient(to bottom, #d9534f 0%, #c12e2a 100%) !important;
+	border-color: #ea5460 !important;
+}
+
+.btn-danger:hover {
+	color: #fff !important;
+	background: #c9302c !important;
+	border-color: #ac2925 !important;
+}
+
+.btn-success {
+	color: #fff !important;
+	background: linear-gradient(to bottom, #5cb85c 0%, #419641 100%) !important;
+	border-color: #398439 !important;
+}
+
+.btn-success:hover {
+	color: #fff !important;
+	background: #449d44 !important;
+	border-color: #398439 !important;
+}
+
+.btn-warning {
+	color: #212529 !important;
+	background: linear-gradient(to bottom, #f0ad4e 0%, #eb9316 100%) !important;
+	border-color: #ffc107 !important;
+}
+
+.btn-warning:hover {
+	color: #fff !important;
+	background: #ec971f !important;
+	border-color: #d58512 !important;
+}

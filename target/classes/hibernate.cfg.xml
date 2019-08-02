@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+
+		<!-- Configurações da Conexão com o Banco de Dados -->
+		<property name="connection.driver_class">org.postgresql.Driver</property>
+		<property name="connection.url">jdbc:postgresql://localhost:5432/curso_java_Web?autoReconnect=true</property>
+		<property name="connection.username">postgres</property>
+		<property name="connection.password">q1w2e3r4</property>
+
+		<!-- Dialeto especifico do Postgres -->
+		<!-- O que é Dialeto? cada sistema de banco de dados implementou sua própria versão da padronização. Ex. Postgres PL/pgSQL, SQL ServerT-SQL, Oracle PL/SQL-->
+		<property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+
+		<!-- Pool de Conexões JDBC -->
+		<property name="connection.pool_size">5</property>
+
+		<!-- Gerencimento da sessão -->
+		<property name="current_session_context_class">thread</property>
+
+		<!-- Desabilita a cache -->
+		<property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+
+		<!-- Exibe os comandos SQL no Console -->
+		<property name="show_sql">true</property>
+
+		
+		<property name="hibernate.temp.use_jdbc_metadata_defaults">"false"</property>
+
+		<!-- Cria as tabelas -->
+		<property name="hbm2ddl.auto">update</property>
+		
+		<!-- Mapeamento as tabelas -->
+		<mapping class="br.com.cursojavaweb.model.Pessoa" />
+		<mapping class="br.com.cursojavaweb.model.PessoaContato" />
+		
+	</session-factory>
+</hibernate-configuration>
